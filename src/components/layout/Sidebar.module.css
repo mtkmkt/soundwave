@@ -1,0 +1,113 @@
+.sidebar {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px;
+  overflow: hidden;
+  gap: 4px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.logoText {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text-subdued);
+  font-weight: 500;
+  font-size: 14px;
+  transition: all var(--transition);
+}
+.navItem:hover { color: var(--text-base); background: rgba(255,255,255,0.05); }
+.active { color: var(--text-base) !important; }
+
+.librarySection { flex: 1; padding: 8px 0; overflow-y: auto; }
+.libraryHeader { display: flex; flex-direction: column; gap: 2px; }
+
+.libraryBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  width: 100%;
+  border: none;
+  background: none;
+  color: var(--text-subdued);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  text-align: left;
+}
+.libraryBtn:hover { color: var(--text-base); background: rgba(255,255,255,0.05); }
+.liked svg { color: #5038a0; }
+
+.dashboardBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  margin: 4px 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: none;
+  color: var(--text-subdued);
+  font-size: 13px;
+  font-family: var(--font);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.dashboardBtn:hover { color: var(--accent); border-color: var(--accent); }
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.avatar, .avatarPlaceholder {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.avatarPlaceholder {
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.profileName {
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

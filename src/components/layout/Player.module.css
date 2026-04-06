@@ -1,0 +1,85 @@
+.player, .playerEmpty {
+  grid-column: 1 / -1;
+  background: #181818;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: var(--player-h);
+  gap: 16px;
+}
+.playerEmpty { justify-content: center; }
+
+.trackInfo { display: flex; align-items: center; gap: 12px; width: 280px; min-width: 200px; }
+.cover { width: 54px; height: 54px; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
+.meta { display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+.trackTitle { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.trackArtist { font-size: 12px; color: var(--text-subdued); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.controls { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; max-width: 722px; }
+.controlBtns { display: flex; align-items: center; gap: 16px; }
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: var(--text-subdued);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+.iconBtn:hover { color: var(--text-base); }
+.activeBtn { color: var(--accent) !important; }
+.liked { color: var(--accent) !important; }
+
+.playBtn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--text-base);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  color: black;
+}
+.playBtn:hover { transform: scale(1.06); background: #f0f0f0; }
+
+.progressRow { display: flex; align-items: center; gap: 8px; width: 100%; }
+.time { font-size: 11px; color: var(--text-subdued); width: 36px; }
+
+.progressTrack, .volumeTrack {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  background: #535353;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.progressFill, .volumeFill {
+  position: absolute;
+  left: 0; top: 0;
+  height: 100%;
+  background: var(--text-base);
+  border-radius: 2px;
+  pointer-events: none;
+  transition: background var(--transition);
+}
+.progressTrack:hover .progressFill,
+.volumeTrack:hover .volumeFill { background: var(--accent); }
+
+.progressInput {
+  position: absolute;
+  inset: -8px 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  height: 20px;
+}
+
+.extras { display: flex; align-items: center; gap: 8px; width: 240px; justify-content: flex-end; }
+.volumeTrack { max-width: 120px; flex: none; width: 120px; }

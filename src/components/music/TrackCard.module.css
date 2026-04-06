@@ -1,0 +1,65 @@
+.card {
+  display: grid;
+  grid-template-columns: 40px 40px 1fr 1fr 120px;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  cursor: default;
+  transition: background var(--transition);
+  position: relative;
+}
+.card:hover { background: rgba(255,255,255,0.05); }
+.active .title { color: var(--accent); }
+
+.index { position: relative; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
+.indexNum { color: var(--text-subdued); font-size: 14px; }
+
+.playBtn {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.card:hover .playBtn { display: flex; }
+.card:hover .indexNum, .card:hover .nowPlaying { display: none; }
+
+/* Equalizer animation */
+.nowPlaying { display: flex; align-items: flex-end; gap: 2px; height: 16px; }
+.nowPlaying span {
+  display: block;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 1px;
+  animation: eq 0.8s ease-in-out infinite alternate;
+}
+.nowPlaying span:nth-child(2) { animation-delay: 0.2s; }
+.nowPlaying span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes eq {
+  from { height: 4px; }
+  to { height: 16px; }
+}
+
+.cover { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; }
+
+.info { display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+.title { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.artist { font-size: 12px; color: var(--text-subdued); }
+
+.album { font-size: 13px; color: var(--text-subdued); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.actions { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.duration { font-size: 13px; color: var(--text-subdued); }
+.actionBtn {
+  background: none; border: none; color: var(--text-subdued); cursor: pointer;
+  opacity: 0; transition: opacity var(--transition);
+  display: flex; align-items: center;
+}
+.card:hover .actionBtn { opacity: 1; }
+.actionBtn:hover { color: var(--text-base); }
